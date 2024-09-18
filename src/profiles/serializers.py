@@ -7,3 +7,9 @@ class GetUserProfSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProf
         exclude = ("password", "last_login", "is_active", "is_staff", "is_superuser")
+
+
+class GetUserProfPublicSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProf
+        exclude = ("email", "phone","password", "last_login", "is_active", "is_staff", "is_superuser")
