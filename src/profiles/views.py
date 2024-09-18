@@ -4,13 +4,13 @@ from rest_framework import permissions
 from .models import UserProf
 from .serializers import GetUserProfSerializer
 
-class GetUserProfView(ModelViewSet):
+
+class UserProfPublic(ModelViewSet):
     queryset = UserProf.objects.all()
     serializer_class = GetUserProfSerializer
     permission_classes = [permissions.AllowAny]
 
-class UpdateUserProfView(ModelViewSet):
-    queryset = UserProf.objects.all()
+class UserProfView(ModelViewSet):
     serializer_class = GetUserProfSerializer
     permission_classes = [permissions.IsAuthenticated]
 

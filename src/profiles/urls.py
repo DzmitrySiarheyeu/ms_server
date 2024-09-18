@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('<int:pk>/', views.GetUserProfView.as_view({'get': 'retrieve'}))
-    # path('<int:pk>/', views.GetUserProfView.as_view({'get': 'retrieve'}))
+    path('profile/<int:pk>/', views.UserProfView.as_view({'get': 'retrieve', 'put': 'update'})),
+    path('<int:pk>/', views.UserProfPublic.as_view({'get': 'retrieve'})),
 ]
